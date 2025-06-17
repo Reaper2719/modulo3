@@ -1,10 +1,12 @@
 
-const CACHE_NAME = 'modulo3-cache-v2';
+const CACHE_NAME = 'modulo3-cache-v3';
 const urlsToCache = [
   './',
   './index.html',
   './style.css',
   './main.js',
+  './indexedDB.js',
+  './export.js',
   './manifest.json',
   './icon-192.png',
   './icon-512.png'
@@ -19,8 +21,8 @@ self.addEventListener('install', event => {
 
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(keyList =>
-      Promise.all(keyList.map(key => {
+    caches.keys().then(keys =>
+      Promise.all(keys.map(key => {
         if (key !== CACHE_NAME) {
           return caches.delete(key);
         }
