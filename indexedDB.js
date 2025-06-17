@@ -13,6 +13,4 @@ export function guardarEnIndexedDB(data) {
     const store = tx.objectStore("registros");
     store.put(data);
   };
-
-  
 }
