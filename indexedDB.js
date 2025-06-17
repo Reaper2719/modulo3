@@ -1,16 +1,26 @@
-
-export function guardarEnIndexedDB(data) {
-  const req = indexedDB.open("Modulo3DB", 1);
-  req.onupgradeneeded = e => {
-    const db = e.target.result;
-    if (!db.objectStoreNames.contains("registros")) {
-      db.createObjectStore("registros", { keyPath: "fecha" });
+function guardarRespuestas() {
+  const respuestas = {};
+  const inputs = document.querySelectorAll("input, textarea");
+  inputs.forEach(input => {
+    if (input.type === "radio" && input.checked) {
+      respuestas[input.name] = input.value;
+    } else if (input.type === "checkbox") {
+      if (!respuestas[input.name]) respuestas[input.name] = [];
+      if (input.checked) respuestas[input.name].push(input.value);
+    } else if (input.tagName === "TEXTAREA" || input.type === "text") {
+      if (input.value.trim() !== "") {
+        if (respuestas[input.name]) {
+          if (Array.isArray(respuestas[input.name])) {
+            respuestas[input.name].push(input.value);
+          } else {
+            respuestas[input.name] = [respuestas[input.name], input.value];
+          }
+        } else {
+          respuestas[input.name] = input.value;
+        }
+      }
     }
-  };
-  req.onsuccess = e => {
-    const db = e.target.result;
-    const tx = db.transaction("registros", "readwrite");
-    const store = tx.objectStore("registros");
-    store.put(data);
-  };
+  });
+  localStorage.setItem("respuestas_modulo2", JSON.stringify(respuestas));
+  alert("Respuestas guardadas localmente.");
 }
