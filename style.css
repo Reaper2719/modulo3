@@ -1,0 +1,78 @@
+
+:root {
+  --sena-green: #008751;
+  --sena-dark: #003c2b;
+  --sena-light: #e6f2ee;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--sena-light);
+  color: var(--sena-dark);
+  margin: 0;
+  padding: 1rem;
+}
+
+main {
+  background: white;
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: var(--sena-green);
+  margin-bottom: 2rem;
+}
+
+form label, form fieldset {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+form input[type="text"],
+form input[type="number"],
+form select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+}
+legend {
+  font-weight: bold;
+  color: var(--sena-green);
+}
+
+button {
+  background-color: var(--sena-green);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+button:hover {
+  background-color: var(--sena-dark);
+}
+
+#lista-registros {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #f4fff8;
+  border-radius: 6px;
+  border: 1px solid var(--sena-green);
+}

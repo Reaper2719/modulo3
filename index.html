@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#008751"/>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <title>Módulo 3 - Inventario de Cargas Eléctricas</title>
+</head>
+<body>
+  <main>
+    <h1>Módulo 3: Inventario de Cargas Eléctricas</h1>
+    <form id="formulario-carga">
+
+      <p><strong>1. ¿Qué tipo de carga va a registrar?</strong><br><em>Tipo de pregunta: Selección única</em></p>
+      <select name="categoria" id="categoria" required>
+        <option value="">Seleccione...</option>
+        <option value="iluminacion">Iluminación</option>
+        <option value="refrigeracion">Refrigeración</option>
+        <option value="cocina">Cocina</option>
+        <option value="comunicaciones">Comunicaciones</option>
+        <option value="ventilacion">Ventilación</option>
+        <option value="produccion">Producción</option>
+        <option value="computacion">Computación</option>
+        <option value="bombeo">Bombeo / hidráulica</option>
+        <option value="otro">Otro</option>
+      </select>
+
+      <p><strong>2. Identifique la carga a inventariar.</strong><br><em>Tipo de pregunta: Selección única</em></p>
+      <select name="tipo" id="tipo" required>
+        <option value="">Seleccione un tipo...</option>
+      </select>
+
+      <p><strong>3. Cantidad de equipos iguales</strong><br><em>Tipo de pregunta: Respuesta abierta</em></p>
+      <input type="number" name="cantidad" min="1" required>
+
+      <p><strong>4. Horas promedio de uso diario</strong><br><em>Tipo de pregunta: Respuesta abierta</em></p>
+      <input type="number" name="horas" min="0" max="24" required>
+
+      <p><strong>5. Días de uso al mes</strong><br><em>Tipo de pregunta: Respuesta abierta</em></p>
+      <input type="number" name="dias" min="0" max="31" required>
+
+      <p><strong>6. Potencia estimada (W)</strong><br><em>Tipo de pregunta: Respuesta abierta</em></p>
+      <input type="number" name="potencia" min="1" required>
+
+      <p><strong>7. Estado físico del equipo</strong><br><em>Tipo de pregunta: Selección múltiple</em></p>
+      <fieldset>
+        <label><input type="checkbox" name="estado" value="En buen estado"> En buen estado</label><br>
+        <label><input type="checkbox" name="estado" value="Deteriorado"> Deteriorado</label><br>
+        <label><input type="checkbox" name="estado" value="Inseguro"> Inseguro</label><br>
+        <label><input type="checkbox" name="estado" value="Otro"> Otro</label>
+      </fieldset>
+
+      <div class="buttons">
+        <button type="submit">Guardar carga</button>
+        <button type="button" id="finalizar">Finalizar y exportar</button>
+      </div>
+    </form>
+
+    <section id="lista-registros"></section>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>
