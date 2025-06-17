@@ -1,7 +1,7 @@
 {
-  "name": "Módulo 3 - Inventario Energético",
+  "name": "M\u00f3dulo 3 - Inventario Energ\u00e9tico",
   "short_name": "Inventario M3",
-  "start_url": "index.html",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#008751",
