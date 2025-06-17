@@ -1,65 +1,183 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="theme-color" content="#008751"/>
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css">
-  <title>Módulo 3 - Inventario de Cargas Eléctricas</title>
+  <link rel="stylesheet" href="style.css" />
+  <title>Módulo 2 - Observación Técnica</title>
 </head>
 <body>
   <main>
-    <h1>Módulo 3: Inventario de Cargas Eléctricas</h1>
-    <form id="formulario-carga">
+    <h1>Módulo 2: Observación Técnica (RETIE)</h1>
+    <form id="formulario">
+      
+<!-- 1 -->
+<fieldset>
+  <legend>1. Describa la acometida observada desde el poste hasta la vivienda.</legend>
+  <textarea name="p1" rows="3" placeholder="Escriba su descripción aquí..."></textarea>
+</fieldset>
 
-      <p><strong>1. ¿Qué tipo de carga va a registrar?</strong><br><em>Tipo de pregunta: Selección única</em></p>
-      <select name="categoria" id="categoria" required>
-        <option value="">Seleccione...</option>
-        <option value="iluminacion">Iluminación</option>
-        <option value="refrigeracion">Refrigeración</option>
-        <option value="cocina">Cocina</option>
-        <option value="comunicaciones">Comunicaciones</option>
-        <option value="ventilacion">Ventilación</option>
-        <option value="produccion">Producción</option>
-        <option value="computacion">Computación</option>
-        <option value="bombeo">Bombeo / hidráulica</option>
-        <option value="otro">Otro</option>
-      </select>
+<!-- 2 -->
+<fieldset>
+  <legend>2. ¿La vivienda tiene instalación eléctrica fija?</legend>
+  <label><input type="radio" name="p2" value="Sí"> Sí</label>
+  <label><input type="radio" name="p2" value="No"> No</label>
+</fieldset>
 
-      <p><strong>2. Identifique la carga a inventariar.</strong><br><em>Tipo de pregunta: Selección única</em></p>
-      <select name="tipo" id="tipo" required>
-        <option value="">Seleccione un tipo...</option>
-      </select>
+<!-- 3 -->
+<fieldset>
+  <legend>3. ¿La instalación es...?</legend>
+  <label><input type="radio" name="p3" value="Superficial"> Superficial</label>
+  <label><input type="radio" name="p3" value="Embutida"> Embutida</label>
+  <label><input type="radio" name="p3" value="Mixta"> Mixta</label>
+  <label><input type="radio" name="p3" value="No aplica"> No aplica</label>
+</fieldset>
 
-      <p><strong>3. Cantidad de equipos iguales</strong><br><em>Tipo de pregunta: Respuesta abierta</em></p>
-      <input type="number" name="cantidad" min="1" required>
+<!-- 4 -->
+<fieldset>
+  <legend>4. ¿La instalación fue hecha por un electricista certificado?</legend>
+  <label><input type="radio" name="p4" value="Sí"> Sí</label>
+  <label><input type="radio" name="p4" value="No"> No</label>
+  <label><input type="radio" name="p4" value="No sabe"> No sabe</label>
+</fieldset>
 
-      <p><strong>4. Horas promedio de uso diario</strong><br><em>Tipo de pregunta: Respuesta abierta</em></p>
-      <input type="number" name="horas" min="0" max="24" required>
+<!-- 5 -->
+<fieldset>
+  <legend>5. ¿Cuenta con planos eléctricos?</legend>
+  <label><input type="radio" name="p5" value="Sí"> Sí</label>
+  <label><input type="radio" name="p5" value="No"> No</label>
+</fieldset>
 
-      <p><strong>5. Días de uso al mes</strong><br><em>Tipo de pregunta: Respuesta abierta</em></p>
-      <input type="number" name="dias" min="0" max="31" required>
+<!-- 6 -->
+<fieldset>
+  <legend>6. ¿Existe tablero de distribución?</legend>
+  <label><input type="radio" name="p6" value="Sí"> Sí</label>
+  <label><input type="radio" name="p6" value="No"> No</label>
+  <label><input type="radio" name="p6" value="Solo fusibles improvisados"> Solo fusibles improvisados</label>
+</fieldset>
 
-      <p><strong>6. Potencia estimada (W)</strong><br><em>Tipo de pregunta: Respuesta abierta</em></p>
-      <input type="number" name="potencia" min="1" required>
+<!-- 7 -->
+<fieldset>
+  <legend>7. ¿El tablero tiene protecciones?</legend>
+  <label><input type="checkbox" name="p7" value="Interruptor general"> Interruptor general</label>
+  <label><input type="checkbox" name="p7" value="Breakers individuales"> Breakers individuales</label>
+  <label><input type="checkbox" name="p7" value="Disyuntor diferencial"> Disyuntor diferencial</label>
+  <label><input type="checkbox" name="p7" value="Ninguna"> Ninguna</label>
+</fieldset>
 
-      <p><strong>7. Estado físico del equipo</strong><br><em>Tipo de pregunta: Selección múltiple</em></p>
-      <fieldset>
-        <label><input type="checkbox" name="estado" value="En buen estado"> En buen estado</label><br>
-        <label><input type="checkbox" name="estado" value="Deteriorado"> Deteriorado</label><br>
-        <label><input type="checkbox" name="estado" value="Inseguro"> Inseguro</label><br>
-        <label><input type="checkbox" name="estado" value="Otro"> Otro</label>
-      </fieldset>
+<!-- 8 -->
+<fieldset>
+  <legend>8. ¿Hay señales de sobrecalentamiento?</legend>
+  <label><input type="radio" name="p8" value="Sí"> Sí</label>
+  <label><input type="radio" name="p8" value="No"> No</label>
+</fieldset>
 
-      <div class="buttons">
-        <button type="submit">Guardar carga</button>
-        <button type="button" id="finalizar">Finalizar y exportar</button>
+<!-- 9 -->
+<fieldset>
+  <legend>9. ¿Qué tipo de canalización se observa?</legend>
+  <label><input type="radio" name="p9" value="Tubo PVC"> Tubo PVC</label>
+  <label><input type="radio" name="p9" value="Flexible corrugado"> Flexible corrugado</label>
+  <label><input type="radio" name="p9" value="Canal metálico"> Canal metálico</label>
+  <label><input type="radio" name="p9" value="Cable a la intemperie"> Cable a la intemperie</label>
+  <label><input type="radio" name="p9" value="Otro"> Otro <input type="text" name="p9_otro" placeholder="Especifique..."></label>
+</fieldset>
+
+<!-- 10 -->
+<fieldset>
+  <legend>10. ¿Calibre del conductor observado?</legend>
+  <label><input type="checkbox" name="p10" value="14 AWG"> 14 AWG</label>
+  <label><input type="checkbox" name="p10" value="12 AWG"> 12 AWG</label>
+  <label><input type="checkbox" name="p10" value="10 AWG"> 10 AWG</label>
+  <label><input type="checkbox" name="p10" value="No se puede verificar"> No se puede verificar</label>
+</fieldset>
+
+<!-- 11 -->
+<fieldset>
+  <legend>11. ¿Conductores con aislamiento en buen estado?</legend>
+  <label><input type="radio" name="p11" value="Sí"> Sí</label>
+  <label><input type="radio" name="p11" value="No"> No</label>
+  <label><input type="radio" name="p11" value="Parcial"> Parcial</label>
+  <label><input type="radio" name="p11" value="No se pudo verificar"> No se pudo verificar</label>
+</fieldset>
+
+<!-- 12 -->
+<fieldset>
+  <legend>12. ¿Tiene puesta a tierra?</legend>
+  <label><input type="radio" name="p12" value="Sí"> Sí</label>
+  <label><input type="radio" name="p12" value="No"> No</label>
+  <label><input type="radio" name="p12" value="Desconectada"> Desconectada</label>
+  <label><input type="radio" name="p12" value="No se puede verificar"> No se puede verificar</label>
+</fieldset>
+
+<!-- 13 -->
+<fieldset>
+  <legend>13. ¿Tomas con polo a tierra?</legend>
+  <label><input type="radio" name="p13" value="Sí, en toda la vivienda"> Sí, en toda la vivienda</label>
+  <label><input type="radio" name="p13" value="Sí, en algunos puntos"> Sí, en algunos puntos</label>
+  <label><input type="radio" name="p13" value="No"> No</label>
+</fieldset>
+
+<!-- 14 -->
+<fieldset>
+  <legend>14. ¿Instalaciones en zonas húmedas sin protección?</legend>
+  <label><input type="radio" name="p14" value="Sí"> Sí</label>
+  <label><input type="radio" name="p14" value="No"> No</label>
+  <label><input type="radio" name="p14" value="No se verificó"> No se verificó</label>
+</fieldset>
+
+<!-- 15 -->
+<fieldset>
+  <legend>15. ¿Extensiones eléctricas improvisadas?</legend>
+  <label><input type="radio" name="p15" value="Sí"> Sí</label>
+  <label><input type="radio" name="p15" value="No"> No</label>
+  <label><input type="radio" name="p15" value="Temporales"> Temporales</label>
+</fieldset>
+
+<!-- 16 -->
+<fieldset>
+  <legend>16. ¿Se han presentado accidentes eléctricos?</legend>
+  <label><input type="radio" name="p16" value="Sí"> Sí</label>
+  <label><input type="radio" name="p16" value="No"> No</label>
+  <label><input type="radio" name="p16" value="No sabe / No responde"> No sabe / No responde</label>
+</fieldset>
+
+<!-- 17 -->
+<fieldset>
+  <legend>17. Nivel de riesgo eléctrico observado</legend>
+  <label><input type="radio" name="p17" value="Bajo"> Bajo</label>
+  <label><input type="radio" name="p17" value="Medio"> Medio</label>
+  <label><input type="radio" name="p17" value="Alto"> Alto</label>
+</fieldset>
+
+<!-- 18 -->
+<fieldset>
+  <legend>18. ¿Desea finalizar el formulario?</legend>
+  <label><input type="radio" name="p18" value="Sí"> Sí</label>
+  <label><input type="radio" name="p18" value="Continuar con otra sección"> Continuar con otra sección</label>
+</fieldset>
+
+<!-- 19 -->
+<fieldset>
+  <legend>19. ¿Qué desea hacer a continuación?</legend>
+  <label><input type="radio" name="p19" value="Continuar con otros registros"> Continuar con otros registros</label>
+  <label><input type="radio" name="p19" value="Salir"> Salir</label>
+</fieldset>
+
+      <div class="acciones">
+        <button type="button" onclick="guardarRespuestas()">Guardar</button>
+        <button type="button" onclick="exportarDatos()">Exportar JSON</button>
       </div>
     </form>
-
-    <section id="lista-registros"></section>
   </main>
+  <script src="indexedDB.js"></script>
   <script src="main.js"></script>
+  <script src="export.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
 </body>
 </html>

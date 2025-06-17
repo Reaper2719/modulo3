@@ -1,10 +1,10 @@
 {
-  "name": "Módulo 3 - Inventario Energético",
-  "short_name": "Inventario M3",
-  "start_url": "index.html",
+  "name": "Encuesta Energética - Módulo 2",
+  "short_name": "Modulo2",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#008751",
+  "theme_color": "#0b6121",
   "icons": [
     {
       "src": "icon-192.png",

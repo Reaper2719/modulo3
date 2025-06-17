@@ -1,78 +1,62 @@
-
-:root {
-  --sena-green: #008751;
-  --sena-dark: #003c2b;
-  --sena-light: #e6f2ee;
-}
-
 body {
-  font-family: "Segoe UI", sans-serif;
-  background-color: var(--sena-light);
-  color: var(--sena-dark);
   margin: 0;
-  padding: 1rem;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f4f4;
+  color: #333;
 }
-
 main {
-  background: white;
   max-width: 800px;
   margin: auto;
-  padding: 2rem;
+  padding: 20px;
+  background: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin-top: 30px;
 }
-
 h1 {
   text-align: center;
-  color: var(--sena-green);
-  margin-bottom: 2rem;
+  color: #0b6121;
 }
-
-form label, form fieldset {
-  display: block;
-  margin-bottom: 1rem;
-}
-
-form input[type="text"],
-form input[type="number"],
-form select {
-  width: 100%;
-  padding: 0.6rem;
-  margin-top: 0.3rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-
 fieldset {
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 1rem;
+  margin-bottom: 20px;
+  border: none;
+  padding: 10px 0;
 }
 legend {
   font-weight: bold;
-  color: var(--sena-green);
+  margin-bottom: 10px;
 }
-
-button {
-  background-color: var(--sena-green);
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 6px;
-  padding: 0.8rem 1rem;
-  margin-top: 1rem;
-  cursor: pointer;
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+textarea, input[type="text"], input[type="number"] {
   width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.acciones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #0b6121;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
 button:hover {
-  background-color: var(--sena-dark);
+  background-color: #094d1a;
 }
-
-#lista-registros {
-  margin-top: 2rem;
-  padding: 1rem;
-  background: #f4fff8;
-  border-radius: 6px;
-  border: 1px solid var(--sena-green);
+@media (max-width: 768px) {
+  .acciones {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
