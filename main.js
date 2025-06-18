@@ -28,3 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const exportBtn = document.getElementById("btn-exportar");
+  if (exportBtn) {
+    exportBtn.addEventListener("click", () => {
+      if (typeof exportarDatos === "function") {
+        exportarDatos();
+      } else {
+        alert("❌ No se pudo ejecutar la exportación.");
+      }
+    });
+  }
+});
