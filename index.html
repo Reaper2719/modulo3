@@ -94,6 +94,22 @@
       <label><input type="radio" name="techo_solar" value="No"> No</label><br>
       <label><input type="radio" name="techo_solar" value="No aplica"> No aplica</label>
 
+      <p><strong>13. Observaciones adicionales:</strong></p>
+      <textarea name="observaciones" rows="4" cols="50" placeholder="Escriba aquí..."></textarea>
+
+      <div class="buttons">
+        <button type="submit">Guardar observación</button>
+        <button type="button" id="exportar">Finalizar y exportar</button>
+      </div>
+    </form>
+
+    <section id="lista-observaciones"></section>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>
+
+
 
       <p><strong>13. ¿Cuál es la cantidad aproximada de estos residuos por semana o mes?</strong></p>
       <input type="text" name="cantidad_residuos" placeholder="Ej: 50 kg, 2 sacos, etc.">
@@ -119,22 +135,6 @@
 
       <p><strong>18. Observaciones adicionales sobre potencial energético en el espacio observado:</strong></p>
       <textarea name="observaciones_energia" rows="4" cols="50" placeholder="Escriba aquí..."></textarea>
-
-
-
-    <p>
-        <label>
-          <input type="checkbox" name="autorizacion_datos" required>
-          Acepto el tratamiento de mis datos personales según la Ley 1581 de 2012 y su decreto reglamentario 1377 de 2013.
-        </label>
-    </p>
-
-    
-      <div class="buttons">
-        <button type="submit">Guardar observación</button>
-        <button type="button" id="exportar">Finalizar y exportar</button>
-      </div>
-    </form>
 
     </form>
     <section id="lista-observaciones"></section>

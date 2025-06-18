@@ -1,36 +1,26 @@
-
-const DB_NAME = "registrosDB";
-const DB_VERSION = 1;
-const STORE_NAME = "registros";
-
-function openDB() {
-  return new Promise((resolve, reject) => {
-    const request = indexedDB.open(DB_NAME, DB_VERSION);
-    request.onerror = () => reject(request.error);
-    request.onsuccess = () => resolve(request.result);
-    request.onupgradeneeded = () => {
-      const db = request.result;
-      if (!db.objectStoreNames.contains(STORE_NAME)) {
-        db.createObjectStore(STORE_NAME, { keyPath: "id", autoIncrement: true });
+function guardarRespuestas() {
+  const respuestas = {};
+  const inputs = document.querySelectorAll("input, textarea");
+  inputs.forEach(input => {
+    if (input.type === "radio" && input.checked) {
+      respuestas[input.name] = input.value;
+    } else if (input.type === "checkbox") {
+      if (!respuestas[input.name]) respuestas[input.name] = [];
+      if (input.checked) respuestas[input.name].push(input.value);
+    } else if (input.tagName === "TEXTAREA" || input.type === "text") {
+      if (input.value.trim() !== "") {
+        if (respuestas[input.name]) {
+          if (Array.isArray(respuestas[input.name])) {
+            respuestas[input.name].push(input.value);
+          } else {
+            respuestas[input.name] = [respuestas[input.name], input.value];
+          }
+        } else {
+          respuestas[input.name] = input.value;
+        }
       }
-    };
+    }
   });
-}
-
-async function guardarRegistro(data) {
-  const db = await openDB();
-  const tx = db.transaction(STORE_NAME, "readwrite");
-  tx.objectStore(STORE_NAME).add(data);
-  return tx.complete;
-}
-
-async function obtenerRegistros() {
-  const db = await openDB();
-  const tx = db.transaction(STORE_NAME, "readonly");
-  const store = tx.objectStore(STORE_NAME);
-  const request = store.getAll();
-  return new Promise((resolve, reject) => {
-    request.onsuccess = () => resolve(request.result);
-    request.onerror = () => reject(request.error);
-  });
+  localStorage.setItem("respuestas_modulo2", JSON.stringify(respuestas));
+  alert("Respuestas guardadas localmente.");
 }
