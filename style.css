@@ -76,3 +76,39 @@ button:hover {
   border-radius: 6px;
   border: 1px solid var(--sena-green);
 }
+<style>
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.btn-share {
+  background-color: #007AFF !important; /* Color azul de iOS */
+}
+
+.btn-share:hover {
+  background-color: #0056CC !important;
+}
+
+@media (min-width: 768px) {
+  .buttons {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .buttons button {
+    width: calc(33.33% - 10px);
+  }
+}
+
+/* Estilos específicos para iPad */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .buttons button {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 10px;
+  }
+}
+</style>
