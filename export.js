@@ -29,3 +29,5 @@ async function exportarDatos() {
     alert("❌ No se pudo abrir la base de datos");
   };
 }
+
+window.exportarDatos = exportarDatos;
