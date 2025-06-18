@@ -34,3 +34,5 @@ async function obtenerRegistros() {
     request.onerror = () => reject(request.error);
   });
 }
+
+window.guardarRegistro = guardarRegistro;
