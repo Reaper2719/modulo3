@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     try {
-      await guardarRegistro(datos);
+      await window.guardarRegistro(datos);
       alert('✅ Registro guardado localmente');
       form.reset();
     } catch (err) {
