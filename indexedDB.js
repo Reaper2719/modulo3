@@ -1,4 +1,3 @@
-
 const DB_NAME = "registrosDB";
 const DB_VERSION = 1;
 const STORE_NAME = "registros";

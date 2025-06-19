@@ -158,33 +158,25 @@
   
   
 
+  
+  
+  
+  
+
   <script src="indexedDB.js"></script>
   <script src="main.js"></script>
   <script src="export.js"></script>
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const btn = document.getElementById("btn-exportar");
-      if (btn) {
-        btn.addEventListener("click", () => {
-          console.log("🔁 Exportar presionado desde HTML directo");
-          if (typeof exportarDatos === "function") {
-            exportarDatos();
-          } else {
-            alert("❌ No se encontró exportarDatos");
-          }
-        });
-      }
-    });
-
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
+    window.addEventListener('load', () => {
+      if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js')
           .then(reg => console.log('✅ SW registrado:', reg.scope))
           .catch(err => console.error('❌ Error registrando SW:', err));
-      });
-    }
+      }
+    });
   </script>
 </body>
+
 
 
 

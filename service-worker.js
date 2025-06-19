@@ -1,4 +1,3 @@
-
 const CACHE_NAME = "modulo4-cache-v1";
 const FILES_TO_CACHE = [
   "/",
@@ -9,8 +8,7 @@ const FILES_TO_CACHE = [
   "export.js",
   "manifest.json",
   "icon-192.png",
-  "icon-512.png",
-  "static.json"
+  "icon-512.png"
 ];
 
 self.addEventListener("install", (event) => {

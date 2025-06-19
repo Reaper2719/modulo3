@@ -1,5 +1,14 @@
+window.onload = () => {
+  console.log("✅ main.js cargado (window.onload)");
 
-document.addEventListener("DOMContentLoaded", () => {
+  if (typeof guardarRegistro === "function") {
+    console.log("✅ guardarRegistro listo");
+  }
+
+  if (typeof exportarDatos === "function") {
+    console.log("✅ exportarDatos listo");
+  }
+
   const form = document.querySelector('form');
   if (form) {
     form.addEventListener('submit', async (e) => {
@@ -18,25 +27,25 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       try {
-        await window.guardarRegistro(datos);
+        await guardarRegistro(datos);
         alert('✅ Registro guardado localmente');
         form.reset();
       } catch (err) {
-        console.error('Error al guardar:', err);
-        alert('❌ Error al guardar');
+        console.error('❌ Error al guardar:', err);
+        alert('❌ Error al guardar el registro');
       }
     });
   }
 
-  const exportBtn = document.getElementById("btn-exportar");
-  if (exportBtn) {
-    exportBtn.addEventListener("click", () => {
+  const btn = document.getElementById("btn-exportar");
+  if (btn) {
+    btn.addEventListener("click", () => {
       console.log("🟢 Botón exportar presionado");
       if (typeof exportarDatos === "function") {
         exportarDatos();
       } else {
-        console.error("❌ exportarDatos no está disponible.");
+        alert("❌ No se pudo ejecutar exportarDatos");
       }
     });
   }
-});
+};
