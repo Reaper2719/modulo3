@@ -1,8 +1,0 @@
-{
-  "root": "index.html",
-  "headers": {
-    "/**": {
-      "Cache-Control": "no-cache"
-    }
-  }
-}

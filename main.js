@@ -1,51 +1,30 @@
-window.onload = () => {
-  console.log("✅ main.js cargado (window.onload)");
 
-  if (typeof guardarRegistro === "function") {
-    console.log("✅ guardarRegistro listo");
+function limpiarFormulario() {
+  const formulario = document.getElementById('formularioModulo');
+  if (formulario) {
+    formulario.reset();
+
+    const checkboxes = formulario.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => checkbox.checked = false);
+
+    const radios = formulario.querySelectorAll('input[type="radio"]');
+    radios.forEach(radio => radio.checked = false);
+
+    const textareas = formulario.querySelectorAll('textarea');
+    textareas.forEach(textarea => textarea.value = '');
   }
+}
 
-  if (typeof exportarDatos === "function") {
-    console.log("✅ exportarDatos listo");
-  }
-
-  const form = document.querySelector('form');
-  if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const datos = {};
-      const elementos = form.querySelectorAll('input, select, textarea');
-      elementos.forEach(el => {
-        if (el.type === 'radio' && el.checked) {
-          datos[el.name] = el.value;
-        } else if (el.type === 'checkbox') {
-          if (!datos[el.name]) datos[el.name] = [];
-          if (el.checked) datos[el.name].push(el.value);
-        } else if (el.type !== 'submit') {
-          datos[el.name] = el.value;
-        }
-      });
-
-      try {
-        await guardarRegistro(datos);
-        alert('✅ Registro guardado localmente');
-        form.reset();
-      } catch (err) {
-        console.error('❌ Error al guardar:', err);
-        alert('❌ Error al guardar el registro');
+// Activar campos de texto al marcar 'Otro'
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
+    input.addEventListener('change', () => {
+      const label = input.parentElement;
+      const otroInput = label.querySelector('input[type="text"]');
+      if (otroInput) {
+        otroInput.disabled = !input.checked;
+        if (!input.checked) otroInput.value = '';
       }
     });
-  }
-
-  const btn = document.getElementById("btn-exportar");
-  if (btn) {
-    btn.addEventListener("click", () => {
-      console.log("🟢 Botón exportar presionado");
-      if (typeof exportarDatos === "function") {
-        exportarDatos();
-      } else {
-        alert("❌ No se pudo ejecutar exportarDatos");
-      }
-    });
-  }
-};
+  });
+});
