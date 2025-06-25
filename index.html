@@ -11,7 +11,7 @@
 <body>
   <main>
     <h1>Módulo 2: Observación Técnica (RETIE)</h1>
-    <form id="formulario">
+    <form id="formularioModulo" id="formulario">
       
 <!-- 1 -->
 <fieldset>
@@ -169,7 +169,12 @@
         <button type="button" onclick="guardarRespuestas()">Guardar</button>
         <button type="button" onclick="exportarDatos()">Exportar JSON</button>
       </div>
-    </form>
+    
+  <button id="botonLimpiar" type="button" onclick="limpiarFormulario()" style="margin-top: 20px;">
+    Limpiar datos
+  </button>
+
+</form>
   </main>
   <script src="indexedDB.js"></script>
   <script src="main.js"></script>
