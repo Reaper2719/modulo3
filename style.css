@@ -1,62 +1,78 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f4f4f4;
-  color: #333;
+
+:root {
+  --sena-green: #008751;
+  --sena-dark: #003c2b;
+  --sena-light: #e6f2ee;
 }
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--sena-light);
+  color: var(--sena-dark);
+  margin: 0;
+  padding: 1rem;
+}
+
 main {
+  background: white;
   max-width: 800px;
   margin: auto;
-  padding: 20px;
-  background: #fff;
+  padding: 2rem;
   border-radius: 10px;
-  margin-top: 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
+
 h1 {
   text-align: center;
-  color: #0b6121;
+  color: var(--sena-green);
+  margin-bottom: 2rem;
 }
+
+form label, form fieldset {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+form input[type="text"],
+form input[type="number"],
+form select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
 fieldset {
-  margin-bottom: 20px;
-  border: none;
-  padding: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
 }
 legend {
   font-weight: bold;
-  margin-bottom: 10px;
+  color: var(--sena-green);
 }
-label {
-  display: block;
-  margin-bottom: 8px;
-}
-textarea, input[type="text"], input[type="number"] {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-.acciones {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
+
 button {
-  padding: 10px 20px;
-  border: none;
-  background-color: #0b6121;
+  background-color: var(--sena-green);
   color: white;
-  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  margin-top: 1rem;
   cursor: pointer;
+  width: 100%;
 }
 button:hover {
-  background-color: #094d1a;
+  background-color: var(--sena-dark);
 }
-@media (max-width: 768px) {
-  .acciones {
-    flex-direction: column;
-    gap: 10px;
-  }
+
+#lista-registros {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #f4fff8;
+  border-radius: 6px;
+  border: 1px solid var(--sena-green);
 }
