@@ -1,184 +1,143 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="manifest" href="manifest.json">
-     <link rel="stylesheet" href="style.css" />
-  <title>Módulo 2 - Observación Técnica</title>
+  <link rel="stylesheet" href="style.css">
+  <title>Módulo 4 - Observación de Zonas Comunes</title>
 </head>
 <body>
-  <main>
-    <h1>Módulo 2: Observación Técnica (RETIE)</h1>
-    <form id="formularioModulo" id="formulario">
-      
-<!-- 1 -->
-<fieldset>
-  <legend>1. Describa la acometida observada desde el poste hasta la vivienda.</legend>
-  <textarea name="p1" rows="3" placeholder="Escriba su descripción aquí..."></textarea>
-</fieldset>
+  <div class='container'>
+    <h1>Módulo 4: Observación de Zonas Comunes</h1>
 
-<!-- 2 -->
-<fieldset>
-  <legend>2. ¿La vivienda tiene instalación eléctrica fija?</legend>
-  <label><input type="radio" name="p2" value="Sí"> Sí</label>
-  <label><input type="radio" name="p2" value="No"> No</label>
-</fieldset>
+        <form id="form-zonas">
 
-<!-- 3 -->
-<fieldset>
-  <legend>3. ¿La instalación es...?</legend>
-  <label><input type="radio" name="p3" value="Superficial"> Superficial</label>
-  <label><input type="radio" name="p3" value="Embutida"> Embutida</label>
-  <label><input type="radio" name="p3" value="Mixta"> Mixta</label>
-  <label><input type="radio" name="p3" value="No aplica"> No aplica</label>
-</fieldset>
+      <p><strong>1. Tipo de espacio observado:</strong></p>
+      <select name="tipo_espacio" required>
+        <option value="">Seleccione...</option>
+        <option value="Zona común">Zona común</option>
+        <option value="Unidad productiva">Unidad productiva</option>
+        <option value="Otro">Otro</option>
+      </select>
+      <input type="text" name="otro_espacio" placeholder="Otro (especifique)">
 
-<!-- 4 -->
-<fieldset>
-  <legend>4. ¿La instalación fue hecha por un electricista certificado?</legend>
-  <label><input type="radio" name="p4" value="Sí"> Sí</label>
-  <label><input type="radio" name="p4" value="No"> No</label>
-  <label><input type="radio" name="p4" value="No sabe"> No sabe</label>
-</fieldset>
+      <p><strong>2. Nombre del espacio:</strong></p>
+      <input type="text" name="nombre_espacio">
 
-<!-- 5 -->
-<fieldset>
-  <legend>5. ¿Cuenta con planos eléctricos?</legend>
-  <label><input type="radio" name="p5" value="Sí"> Sí</label>
-  <label><input type="radio" name="p5" value="No"> No</label>
-</fieldset>
+      <p><strong>3. Ubicación o punto de referencia:</strong></p>
+      <input type="text" name="ubicacion">
 
-<!-- 6 -->
-<fieldset>
-  <legend>6. ¿Existe tablero de distribución?</legend>
-  <label><input type="radio" name="p6" value="Sí"> Sí</label>
-  <label><input type="radio" name="p6" value="No"> No</label>
-  <label><input type="radio" name="p6" value="Solo fusibles improvisados"> Solo fusibles improvisados</label>
-</fieldset>
+      <p><strong>4. ¿Está actualmente en funcionamiento?</strong></p>
+      <label><input type="radio" name="funcionamiento" value="Sí" required> Sí</label><br>
+      <label><input type="radio" name="funcionamiento" value="Parcialmente"> Parcialmente</label><br>
+      <label><input type="radio" name="funcionamiento" value="No"> No</label>
 
-<!-- 7 -->
-<fieldset>
-  <legend>7. ¿El tablero tiene protecciones?</legend>
-  <label><input type="checkbox" name="p7" value="Interruptor general"> Interruptor general</label>
-  <label><input type="checkbox" name="p7" value="Breakers individuales"> Breakers individuales</label>
-  <label><input type="checkbox" name="p7" value="Disyuntor diferencial"> Disyuntor diferencial</label>
-  <label><input type="checkbox" name="p7" value="Ninguna"> Ninguna</label>
-</fieldset>
+      <p><strong>5. Estado físico general:</strong></p>
+      <label><input type="radio" name="estado_fisico" value="Bueno" required> Bueno</label><br>
+      <label><input type="radio" name="estado_fisico" value="Regular"> Regular</label><br>
+      <label><input type="radio" name="estado_fisico" value="Malo"> Malo</label>
 
-<!-- 8 -->
-<fieldset>
-  <legend>8. ¿Hay señales de sobrecalentamiento?</legend>
-  <label><input type="radio" name="p8" value="Sí"> Sí</label>
-  <label><input type="radio" name="p8" value="No"> No</label>
-</fieldset>
+      <p><strong>6. ¿Cuenta con acceso a energía eléctrica?</strong></p>
+      <label><input type="radio" name="energia" value="Estable" required> Sí, conexión estable</label><br>
+      <label><input type="radio" name="energia" value="Intermitente"> Sí, intermitente</label><br>
+      <label><input type="radio" name="energia" value="No tiene"> No tiene acceso</label><br>
+      <label><input type="radio" name="energia" value="Fuente alternativa"> Usa fuente alternativa</label>
 
-<!-- 9 -->
-<fieldset>
-  <legend>9. ¿Qué tipo de canalización se observa?</legend>
-  <label><input type="radio" name="p9" value="Tubo PVC"> Tubo PVC</label>
-  <label><input type="radio" name="p9" value="Flexible corrugado"> Flexible corrugado</label>
-  <label><input type="radio" name="p9" value="Canal metálico"> Canal metálico</label>
-  <label><input type="radio" name="p9" value="Cable a la intemperie"> Cable a la intemperie</label>
-  <label><input type="radio" name="p9" value="Otro"> Otro <input type="text" name="p9_otro" placeholder="Especifique..."></label>
-</fieldset>
+      <p><strong>7. Tipo de instalación eléctrica:</strong></p>
+      <label><input type="radio" name="instalacion" value="Formal" required> Formal y protegida</label><br>
+      <label><input type="radio" name="instalacion" value="Improvisada"> Improvisada o parcial</label><br>
+      <label><input type="radio" name="instalacion" value="No se observan"> No se observan</label>
 
-<!-- 10 -->
-<fieldset>
-  <legend>10. ¿Calibre del conductor observado?</legend>
-  <label><input type="checkbox" name="p10" value="14 AWG"> 14 AWG</label>
-  <label><input type="checkbox" name="p10" value="12 AWG"> 12 AWG</label>
-  <label><input type="checkbox" name="p10" value="10 AWG"> 10 AWG</label>
-  <label><input type="checkbox" name="p10" value="No se puede verificar"> No se puede verificar</label>
-</fieldset>
+      <p><strong>8. Equipos eléctricos presentes:</strong></p>
+      <label><input type="checkbox" name="equipos" value="Iluminación interior"> Iluminación interior</label><br>
+      <label><input type="checkbox" name="equipos" value="Iluminación exterior"> Iluminación exterior</label><br>
+      <label><input type="checkbox" name="equipos" value="Ventiladores"> Ventiladores</label><br>
+      <label><input type="checkbox" name="equipos" value="Computadores"> Computadores o tablets</label><br>
+      <label><input type="checkbox" name="equipos" value="Refrigerador"> Refrigerador / congelador</label><br>
+      <label><input type="checkbox" name="equipos" value="Bombeo"> Sistema de bombeo</label><br>
+      <label><input type="checkbox" name="equipos" value="Máquina productiva"> Máquina productiva</label><br>
+      <label><input type="checkbox" name="equipos" value="No tiene"> No tiene equipos</label><br>
+      <label><input type="checkbox" name="equipos" value="Otro"> Otro</label>
 
-<!-- 11 -->
-<fieldset>
-  <legend>11. ¿Conductores con aislamiento en buen estado?</legend>
-  <label><input type="radio" name="p11" value="Sí"> Sí</label>
-  <label><input type="radio" name="p11" value="No"> No</label>
-  <label><input type="radio" name="p11" value="Parcial"> Parcial</label>
-  <label><input type="radio" name="p11" value="No se pudo verificar"> No se pudo verificar</label>
-</fieldset>
+      <p><strong>9. Uso principal del espacio:</strong></p>
+      <label><input type="radio" name="uso" value="Educativo" required> Educativo</label><br>
+      <label><input type="radio" name="uso" value="Comunitario"> Comunitario / social</label><br>
+      <label><input type="radio" name="uso" value="Salud"> Salud</label><br>
+      <label><input type="radio" name="uso" value="Deporte"> Deporte / Entretenimiento</label><br>
+      <label><input type="radio" name="uso" value="Producción"> Producción agropecuaria</label><br>
+      <label><input type="radio" name="uso" value="Transformación"> Transformación de alimentos</label><br>
+      <label><input type="radio" name="uso" value="Otro"> Otro</label>
 
-<!-- 12 -->
-<fieldset>
-  <legend>12. ¿Tiene puesta a tierra?</legend>
-  <label><input type="radio" name="p12" value="Sí"> Sí</label>
-  <label><input type="radio" name="p12" value="No"> No</label>
-  <label><input type="radio" name="p12" value="Desconectada"> Desconectada</label>
-  <label><input type="radio" name="p12" value="No se puede verificar"> No se puede verificar</label>
-</fieldset>
+      <p><strong>10. Necesidades prioritarias:</strong></p>
+      <label><input type="checkbox" name="necesidades" value="Acceso a energía"> Acceso a energía eléctrica</label><br>
+      <label><input type="checkbox" name="necesidades" value="Mejoras eléctricas"> Mejoras en instalación eléctrica</label><br>
+      <label><input type="checkbox" name="necesidades" value="Iluminación adecuada"> Iluminación adecuada</label><br>
+      <label><input type="checkbox" name="necesidades" value="Equipos"> Equipos productivos o educativos</label><br>
+      <label><input type="checkbox" name="necesidades" value="Mantenimiento"> Mantenimiento general</label><br>
+      <label><input type="checkbox" name="necesidades" value="Capacitación"> Capacitación</label><br>
+      <label><input type="checkbox" name="necesidades" value="Otro"> Otro</label>
 
-<!-- 13 -->
-<fieldset>
-  <legend>13. ¿Tomas con polo a tierra?</legend>
-  <label><input type="radio" name="p13" value="Sí, en toda la vivienda"> Sí, en toda la vivienda</label>
-  <label><input type="radio" name="p13" value="Sí, en algunos puntos"> Sí, en algunos puntos</label>
-  <label><input type="radio" name="p13" value="No"> No</label>
-</fieldset>
+      <p><strong>11. ¿Se generan residuos orgánicos o biomasa?</strong></p>
+      <label><input type="checkbox" name="residuos" value="Restos de cultivos"> Restos de cultivos</label><br>
+      <label><input type="checkbox" name="residuos" value="Desechos de alimentos"> Desechos de alimentos</label><br>
+      <label><input type="checkbox" name="residuos" value="Estiércol"> Estiércol de animales</label><br>
+      <label><input type="checkbox" name="residuos" value="Residuos de poda"> Residuos de poda o madera</label><br>
+      <label><input type="checkbox" name="residuos" value="Residuos de pescado"> Residuos de pescado</label><br>
+      <label><input type="checkbox" name="residuos" value="Otros"> Otros</label><br>
+      <label><input type="checkbox" name="residuos" value="No"> No se generan</label>
 
-<!-- 14 -->
-<fieldset>
-  <legend>14. ¿Instalaciones en zonas húmedas sin protección?</legend>
-  <label><input type="radio" name="p14" value="Sí"> Sí</label>
-  <label><input type="radio" name="p14" value="No"> No</label>
-  <label><input type="radio" name="p14" value="No se verificó"> No se verificó</label>
-</fieldset>
-
-<!-- 15 -->
-<fieldset>
-  <legend>15. ¿Extensiones eléctricas improvisadas?</legend>
-  <label><input type="radio" name="p15" value="Sí"> Sí</label>
-  <label><input type="radio" name="p15" value="No"> No</label>
-  <label><input type="radio" name="p15" value="Temporales"> Temporales</label>
-</fieldset>
-
-<!-- 16 -->
-<fieldset>
-  <legend>16. ¿Se han presentado accidentes eléctricos?</legend>
-  <label><input type="radio" name="p16" value="Sí"> Sí</label>
-  <label><input type="radio" name="p16" value="No"> No</label>
-  <label><input type="radio" name="p16" value="No sabe / No responde"> No sabe / No responde</label>
-</fieldset>
-
-<!-- 17 -->
-<fieldset>
-  <legend>17. Nivel de riesgo eléctrico observado</legend>
-  <label><input type="radio" name="p17" value="Bajo"> Bajo</label>
-  <label><input type="radio" name="p17" value="Medio"> Medio</label>
-  <label><input type="radio" name="p17" value="Alto"> Alto</label>
-</fieldset>
-
-<!-- 18 -->
-<fieldset>
-  <legend>18. ¿Desea finalizar el formulario?</legend>
-  <label><input type="radio" name="p18" value="Sí"> Sí</label>
-  <label><input type="radio" name="p18" value="Continuar con otra sección"> Continuar con otra sección</label>
-</fieldset>
-
-<!-- 19 -->
+      <p><strong>12. ¿Cuenta con techo solar o sería adecuado instalar uno?</strong></p>
+      <label><input type="radio" name="techo_solar" value="Sí" required> Sí</label><br>
+      <label><input type="radio" name="techo_solar" value="No"> No</label><br>
+      <label><input type="radio" name="techo_solar" value="No aplica"> No aplica</label>
 
 
-      <div class="acciones">
-        <button type="button" onclick="guardarRespuestas()">Guardar</button>
-        <button type="button" onclick="exportarDatos()">Exportar JSON</button>
-      </div>
+      <p><strong>13. ¿Cuál es la cantidad aproximada de estos residuos por semana o mes?</strong></p>
+      <input type="text" name="cantidad_residuos" placeholder="Ej: 50 kg, 2 sacos, etc.">
+      <p><strong>14. ¿Qué uso actual se le da a esos residuos?</strong></p>
+      <label><input type="checkbox" name="uso_residuos" value="Se desechan"> Se desechan</label><br>
+      <label><input type="checkbox" name="uso_residuos" value="Se compostan"> Se compostan</label><br>
+      <label><input type="checkbox" name="uso_residuos" value="Se utilizan para alimentar animales"> Se utilizan para alimentar animales</label><br>
+      <label><input type="checkbox" name="uso_residuos" value="Se queman"> Se queman</label><br>
+      <label><input type="checkbox" name="uso_residuos" value="Otro"> Otro</label>
+
+      <p><strong>15. ¿Existe infraestructura disponible con techos aptos para instalación de paneles solares?</strong></p>
+      <label><input type="radio" name="infraestructura_techos" value="Sí" required> Sí</label><br>
+      <label><input type="radio" name="infraestructura_techos" value="No"> No</label><br>
+      <label><input type="radio" name="infraestructura_techos" value="Parcialmente"> Parcialmente</label>
+
+      <p><strong>16. Área estimada de techo disponible (m²):</strong></p>
+      <input type="text" name="area_techo">
+
+      <p><strong>17. ¿La zona recibe buena radiación solar directa al menos 5 horas al día?</strong></p>
+      <label><input type="radio" name="radiacion_solar" value="Sí" required> Sí</label><br>
+      <label><input type="radio" name="radiacion_solar" value="No"> No</label><br>
+      <label><input type="radio" name="radiacion_solar" value="No se pudo verificar"> No se pudo verificar</label>
+
+      <p><strong>18. Observaciones adicionales sobre potencial energético en el espacio observado:</strong></p>
+      <textarea name="observaciones_energia" rows="4" cols="50" placeholder="Escriba aquí..."></textarea>
+
+
+
+    <p>
+        <label>
+          <input type="checkbox" name="autorizacion_datos" required>
+          Acepto el tratamiento de mis datos personales según la Ley 1581 de 2012 y su decreto reglamentario 1377 de 2013.
+        </label>
+    </p>
+
     
-  <button id="botonLimpiar" type="button" onclick="limpiarFormulario()" style="margin-top: 20px;">
-    Limpiar datos
-  </button>
+      <div class="buttons">
+        <button type="submit">Guardar observación</button>
+        <button type="button" id="btn-exportar">Finalizar y exportar</button>
+      </div>
+    </form>
 
-</form>
-  </main>
-  <script src="indexedDB.js"></script>
-  <script src="main.js"></script>
-  <script src="export.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js');
-    }
-  </script>
+    <button id="exportar">Finalizar y exportar</button>
+    <textarea id="resultado-json" readonly></textarea>
+    <button onclick="copiarJSON()">Copiar JSON</button>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
