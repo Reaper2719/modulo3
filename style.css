@@ -1,78 +1,76 @@
-
-:root {
-  --sena-green: #008751;
-  --sena-dark: #003c2b;
-  --sena-light: #e6f2ee;
-}
-
 body {
-  font-family: "Segoe UI", sans-serif;
-  background-color: var(--sena-light);
-  color: var(--sena-dark);
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #eaf4f1;
   margin: 0;
-  padding: 1rem;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
-main {
-  background: white;
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+form, textarea, select, input, button {
+  font-size: 16px;
 }
 
 h1 {
   text-align: center;
-  color: var(--sena-green);
-  margin-bottom: 2rem;
-}
-
-form label, form fieldset {
-  display: block;
-  margin-bottom: 1rem;
-}
-
-form input[type="text"],
-form input[type="number"],
-form select {
-  width: 100%;
-  padding: 0.6rem;
-  margin-top: 0.3rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-
-fieldset {
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  color: #0a5133;
   padding: 1rem;
 }
-legend {
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  background-color: white;
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+label {
   font-weight: bold;
-  color: var(--sena-green);
+  color: #0a5133;
+  display: block;
+  margin-top: 1rem;
+}
+
+textarea, input, select {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: #f4fdfb;
 }
 
 button {
-  background-color: var(--sena-green);
+  background-color: #0a5133;
   color: white;
-  font-weight: bold;
+  padding: 0.8rem;
   border: none;
-  border-radius: 6px;
-  padding: 0.8rem 1rem;
-  margin-top: 1rem;
+  border-radius: 8px;
   cursor: pointer;
   width: 100%;
-}
-button:hover {
-  background-color: var(--sena-dark);
+  margin-top: 1.5rem;
 }
 
-#lista-registros {
-  margin-top: 2rem;
-  padding: 1rem;
-  background: #f4fff8;
-  border-radius: 6px;
-  border: 1px solid var(--sena-green);
+button:hover {
+  background-color: #087a50;
+}
+
+#resultado-json {
+  margin-top: 1rem;
+  height: 200px;
+  background-color: #fdfdfd;
+}
+
+.checkbox-group {
+  margin-top: 0.5rem;
+}
+
+.checkbox-group label {
+  display: block;
+  margin: 0.3rem 0;
+  font-weight: normal;
 }
