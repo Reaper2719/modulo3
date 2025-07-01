@@ -1,5 +1,5 @@
-const dbName = 'Modulo4_DB';
-const storeName = 'zonas';
+const dbName = 'Modulo3_DB';
+const storeName = 'cargas';
 
 let db;
 const request = indexedDB.open(dbName, 1);
@@ -14,16 +14,12 @@ request.onerror = function (e) {
   alert('Error al abrir IndexedDB');
 };
 
-document.querySelector("form").addEventListener("submit", function (e) {
+document.getElementById('formulario-carga').addEventListener('submit', function (e) {
   e.preventDefault();
   const data = {};
   new FormData(e.target).forEach((v, k) => {
-    if (data[k]) {
-      if (Array.isArray(data[k])) {
-        data[k].push(v);
-      } else {
-        data[k] = [data[k], v];
-      }
+    if (k === "estado") {
+      data[k] = data[k] ? [...data[k], v] : [v];
     } else {
       data[k] = v;
     }
@@ -33,12 +29,12 @@ document.querySelector("form").addEventListener("submit", function (e) {
   const store = tx.objectStore(storeName);
   store.add(data);
   tx.oncomplete = () => {
-    alert("Observación guardada.");
+    alert("Carga guardada.");
     e.target.reset();
   };
 });
 
-document.getElementById('exportar').addEventListener('click', () => {
+document.getElementById('exportar').addEventListener('click', async () => {
   const tx = db.transaction([storeName], 'readonly');
   const store = tx.objectStore(storeName);
   const all = store.getAll();

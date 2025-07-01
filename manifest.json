@@ -1,21 +1,9 @@
 {
-  "name": "Modulo 4 - Observación Energética",
-  "short_name": "Modulo4",
-  "start_url": "./",
+  "name": "Inventario Energético - Módulo 3",
+  "short_name": "Módulo3",
+  "start_url": ".",
   "display": "standalone",
-  "scope": "./",
   "background_color": "#ffffff",
-  "theme_color": "#008751",
-  "icons": [
-    {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+  "theme_color": "#0a5133",
+  "icons": []
 }
