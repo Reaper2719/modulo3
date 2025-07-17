@@ -1,59 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css">
-  <title>Módulo 3 - Inventario de Cargas</title>
+     <link rel="stylesheet" href="style.css" />
+  <title>Módulo 2 - Observación Técnica</title>
 </head>
 <body>
-  <div class='container'>
-    <h1>Módulo 3: Inventario de Cargas Eléctricas</h1>
+  <main>
+    <h1>Módulo 2: Observación Técnica (RETIE)</h1>
+    <form id="formularioModulo" id="formulario">
 
-    <label>Descripción de la casa:</label>
-    <textarea name="descripcion" placeholder="Coloque aquí la descripción de la casa (Acorde en los tres módulos)" required></textarea>
+<!-- 1 -->
+<fieldset>
+  <legend>1. Describa la acometida observada desde el poste hasta la vivienda.</legend>
+  <textarea name="p1" rows="3" placeholder="Escriba su descripción aquí..."></textarea>
+</fieldset>
 
-    <form id="formulario-carga">
-      <label>Categoría de carga:</label>
-      <select name="categoria" required>
-        <option value="">Seleccione...</option>
-        <option>Iluminación</option>
-        <option>Refrigeración</option>
-        <option>Ofimática</option>
-        <option>Industrial</option>
-        <option>Otro</option>
-      </select>
+<!-- 2 -->
+<fieldset>
+  <legend>2. ¿La vivienda tiene instalación eléctrica fija?</legend>
+  <label><input type="radio" name="p2" value="Sí"> Sí</label>
+  <label><input type="radio" name="p2" value="No"> No</label>
+</fieldset>
 
-      <label>Tipo de carga:</label>
-      <input type="text" name="tipo" placeholder="Describa el tipo de carga" required />
+<!-- 3 -->
+<fieldset>
+  <legend>3. ¿La instalación de la vivienda es?</legend>
+  <label><input type="radio" name="p3" value="Áerea"> Áerea</label>
+  <label><input type="radio" name="p3" value="Empotrada"> Empotrada</label>
+  <label><input type="radio" name="p3" value="Mixta"> Mixta</label>
+  <label><input type="radio" name="p3" value="No aplica"> No aplica</label>
+</fieldset>
 
-      <label>Cantidad de equipos:</label>
-      <input type="number" name="cantidad" min="1" required />
+<!-- 4 -->
+<fieldset>
+  <legend>4. ¿Existe tablero de distribución?</legend>
+  <label><input type="radio" name="p4" value="Sí"> Sí</label>
+  <label><input type="radio" name="p4" value="No"> No</label>
+  <label><input type="radio" name="p4" value="Solo fusibles improvisados"> Solo fusibles improvisados</label>
+</fieldset>
 
-      <label>Horas promedio de uso diario:</label>
-      <input type="number" name="horas" step="0.1" min="0" required />
+<!-- 5 -->
+<fieldset>
+  <legend>5. ¿El tablero tiene protecciones?</legend>
+  <label><input type="checkbox" name="p5" value="Interruptor general"> Interruptor general</label>
+  <label><input type="checkbox" name="p5" value="Breakers individuales"> Breakers individuales</label>
+  <label><input type="checkbox" name="p5" value="Fusibles"> Fusibles</label>
+  <label><input type="checkbox" name="p5" value="Cuchilla de protección"> Cuchilla de protección</label>
+  <label><input type="checkbox" name="p5" value="Ninguna"> Ninguna</label>
+</fieldset>
 
-      <label>Días de uso al mes:</label>
-      <input type="number" name="dias" min="0" max="31" required />
+<!-- 6 -->
+<fieldset>
+  <legend>6. ¿Hay señales de sobrecalentamiento?</legend>
+  <label><input type="radio" name="p6" value="Sí"> Sí</label>
+  <label><input type="radio" name="p6" value="No"> No</label>
+</fieldset>
 
-      <label>Potencia estimada por unidad (W):</label>
-      <input type="number" name="potencia" step="1" min="1" required />
 
-      <label>Estado físico del equipo:</label>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="estado" value="Bueno"> Bueno</label>
-        <label><input type="checkbox" name="estado" value="Regular"> Regular</label>
-        <label><input type="checkbox" name="estado" value="Malo"> Malo</label>
+<!-- 7 -->
+<fieldset>
+  <legend>7. ¿Qué tipo de canalización se observa en el interior de la casa?</legend>
+  <label><input type="checkbox" name="p7" value="Tubo PVC"> Tubo PVC</label>
+  <label><input type="checkbox" name="p7" value="Flexible corrugado"> Flexible corrugado</label>
+  <label><input type="checkbox" name="p7" value="Canal metálico"> Canal metálico</label>
+  <label><input type="checkbox" name="p7" value="Cable a la vista"> Cable a la vista</label>
+  <label><input type="checkbox" name="p7" value="Mixto"> Mixto</label>
+  <label><input type="checkbox" name="p7" value="Otro"> Otro</label>
+</fieldset>
+
+<!-- 8 -->
+<fieldset>
+  <legend>8. ¿Calibre del conductor observado?</legend>
+  <label><input type="checkbox" name="p8" value="14 AWG"> 14 AWG</label>
+  <label><input type="checkbox" name="p8" value="12 AWG"> 12 AWG</label>
+  <label><input type="checkbox" name="p8" value="10 AWG"> 10 AWG</label>
+  <label><input type="checkbox" name="p8" value="No se puede verificar"> No se puede verificar</label>
+</fieldset>
+
+<!-- 9 -->
+<fieldset>
+  <legend>9. ¿Conductores con aislamiento en buen estado?</legend>
+  <label><input type="radio" name="p9" value="Sí"> Sí</label>
+  <label><input type="radio" name="p9" value="No"> No</label>
+  <label><input type="radio" name="p9" value="Parcial"> Parcial</label>
+  <label><input type="radio" name="p9" value="No se pudo verificar"> No se pudo verificar</label>
+</fieldset>
+
+<!-- 10 -->
+<fieldset>
+  <legend>10. ¿Tiene puesta a tierra?</legend>
+  <label><input type="radio" name="p10" value="Sí"> Sí</label>
+  <label><input type="radio" name="p10" value="No"> No</label>
+  <label><input type="radio" name="p10" value="Desconectada"> Desconectada</label>
+  <label><input type="radio" name="p10" value="No se puede verificar"> No se puede verificar</label>
+</fieldset>
+
+<!-- 11 -->
+<fieldset>
+  <legend>11. ¿Instalaciones en zonas húmedas sin protección?</legend>
+  <label><input type="radio" name="p11" value="Sí"> Sí</label>
+  <label><input type="radio" name="p11" value="No"> No</label>
+  <label><input type="radio" name="p11" value="No se verificó"> No se verificó</label>
+</fieldset>
+
+<!-- 12 -->
+<fieldset>
+  <legend>12. ¿Extensiones eléctricas improvisadas?</legend>
+  <label><input type="radio" name="p12" value="Sí"> Sí</label>
+  <label><input type="radio" name="p12" value="No"> No</label>
+  <label><input type="radio" name="p12" value="Temporales"> Temporales</label>
+</fieldset>
+
+<!-- 13 -->
+<fieldset>
+  <legend>13. ¿Se han presentado accidentes eléctricos?</legend>
+  <label><input type="radio" name="p13" value="Sí"> Sí</label>
+  <label><input type="radio" name="p13" value="No"> No</label>
+  <label><input type="radio" name="p13" value="No sabe / No responde"> No sabe / No responde</label>
+</fieldset>
+
+<!-- 14 -->
+<fieldset>
+  <legend>14. Nivel de riesgo eléctrico observado</legend>
+  <label><input type="radio" name="p14" value="Bajo"> Bajo</label>
+  <label><input type="radio" name="p14" value="Medio"> Medio</label>
+  <label><input type="radio" name="p14" value="Alto"> Alto</label>
+</fieldset>
+
+<!-- 15 -->
+<fieldset>
+  <legend>15. ¿Cuáles son los usos prioritarios que usted le da a la energía eléctrica en su hogar?</legend>
+  <label><input type="checkbox" name="p15" value="Iluminación"> Iluminación</label>
+  <label><input type="checkbox" name="p15" value="Refrigeración de alimentos"> Refrigeración de alimentos</label>
+  <label><input type="checkbox" name="p15" value="Carga de celular u otros dispositivos"> Carga de celular u otros dispositivos</label>
+  <label><input type="checkbox" name="p15" value="Televisión y entretenimiento"> Televisión y entretenimiento</label>
+  <label><input type="checkbox" name="p15" value="Ventilación o aire acondicionado"> Ventilación o aire acondicionado</label>
+  <label><input type="checkbox" name="p15" value="Cocinar o calentar alimentos"> Cocinar o calentar alimentos</label>
+  <label><input type="checkbox" name="p15" value="Trabajo o actividades productivas (costura, carpintería, etc.)"> Trabajo o actividades productivas (costura, carpintería, etc.)</label>
+  <label><input type="checkbox" name="p15" value="Bombeo de agua"> Bombeo de agua</label>
+  <label><input type="checkbox" name="p15" value="Educación (uso de computador, tablet, iluminación para estudio)"> Educación (uso de computador, tablet, iluminación para estudio)</label>
+  <label><input type="checkbox" name="p15" value="Otro"> Otro: <input type="text" name="p15_otro" placeholder="Especifique..." /></label>
+</fieldset>
+
+
+      <div class="acciones">
+        <button type="button" onclick="guardarRespuestas()">Guardar</button>
+        <button type="button" onclick="exportarDatos()">Exportar JSON</button>
       </div>
+    
+  <button id="botonLimpiar" type="button" onclick="limpiarFormulario()" style="margin-top: 20px;">
+    Limpiar datos
+  </button>
 
-      <button type="submit">Guardar carga</button>
-    </form>
-
-    <button id="exportar">Finalizar y exportar</button>
-    <textarea id="resultado-json" readonly></textarea>
-    <button onclick="copiarJSON()">Copiar JSON</button>
-  </div>
-  <script src="script.js"></script>
+</form>
+  </main>
+  <script src="indexedDB.js"></script>
+  <script src="main.js"></script>
+  <script src="export.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
 </body>
 </html>

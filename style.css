@@ -1,76 +1,62 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #eaf4f1;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f4f4;
+  color: #333;
 }
-
-form, textarea, select, input, button {
-  font-size: 16px;
+main {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 30px;
 }
-
 h1 {
   text-align: center;
-  color: #0a5133;
-  padding: 1rem;
+  color: #0b6121;
 }
-
-.container {
-  max-width: 600px;
-  width: 100%;
-  padding: 2rem;
-  background-color: white;
-  margin: 2rem auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-label {
-  font-weight: bold;
-  color: #0a5133;
-  display: block;
-  margin-top: 1rem;
-}
-
-textarea, input, select {
-  width: 100%;
-  padding: 0.7rem;
-  margin-top: 0.25rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-sizing: border-box;
-  background-color: #f4fdfb;
-}
-
-button {
-  background-color: #0a5133;
-  color: white;
-  padding: 0.8rem;
+fieldset {
+  margin-bottom: 20px;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 1.5rem;
+  padding: 10px 0;
 }
-
-button:hover {
-  background-color: #087a50;
+legend {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
-
-#resultado-json {
-  margin-top: 1rem;
-  height: 200px;
-  background-color: #fdfdfd;
-}
-
-.checkbox-group {
-  margin-top: 0.5rem;
-}
-
-.checkbox-group label {
+label {
   display: block;
-  margin: 0.3rem 0;
-  font-weight: normal;
+  margin-bottom: 8px;
+}
+textarea, input[type="text"], input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.acciones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #0b6121;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #094d1a;
+}
+@media (max-width: 768px) {
+  .acciones {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
